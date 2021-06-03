@@ -1,8 +1,23 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Testing page";
     List<string> fruits = new List<string>() { "Bananna", "Cherry", "Apple", "Pineapple" };
+}
+
+@section Scripts {
+    <a href="https://www.google.ca/">Google</a>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+}
+
+@section NavItems {
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Error">Error</a>
+    </li>
+    
 }
 
 <div class="text-center">
@@ -10,16 +25,34 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
+<div>This is a change.</div>
+
 <datalist id="fruit-list">
-    @foreach(string fruit in fruits)
-            {
-                <option>@fruit</option>
-            }
+    @foreach (string fruit in fruits)
+    {
+        <option>@fruit</option>
+    }
 </datalist>
 
 <input type="text" list="fruit-list" />
 
-@for(int i = 0; i < 5; i++)
-            {
+@for (int i = 0; i < 5; i++)
+{
     <div>@i</div>
-            }
+}
+<code>
+    @for (int i = 0; i < 5; i++)
+    {
+        <span>@i</span>
+    }
+</code>
+
+@foreach (string fruit in fruits)
+{
+    <script>
+console.log("@fruit");</script>
+}
+
+
+<div>@(Math.Round(Math.Atan(1) * 4, 3))</div>
+
