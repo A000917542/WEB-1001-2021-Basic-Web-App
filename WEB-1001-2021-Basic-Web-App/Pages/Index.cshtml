@@ -20,12 +20,20 @@
     
 }
 
+<form method="get">
+    <input name="maxInt" type="number" step="1" />
+    <input type="submit" value="Submit" />
+</form>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
 <div>This is a change.</div>
+<p>@ViewData["Test"]</p>
+
+<p>@Model.maxInt</p>
 
 <datalist id="fruit-list">
     @foreach (string fruit in fruits)

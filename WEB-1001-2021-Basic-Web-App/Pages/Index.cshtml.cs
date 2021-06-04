@@ -19,7 +19,11 @@ namespace WEB_1001_2021_Basic_Web_App.Pages
 
         public void OnGet()
         {
-
+            ViewData["Test"] = "This is a test";
+            //maxInt = int.MaxValue;
         }
+
+        [FromQuery(Name = "maxInt")]
+        public int maxInt { get; set; }
     }
 }
