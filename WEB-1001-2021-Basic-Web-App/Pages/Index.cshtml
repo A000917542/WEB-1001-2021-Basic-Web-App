@@ -21,11 +21,17 @@
 }
 
 <form method="get">
-    <input name="maxInt" type="number" step="1" />
+    <input name="leftNumber" type="number" step="1" />
+    <input name="rightNumber" type="number" step="1" />
     <input type="submit" value="Submit" />
 </form>
 
-<div class="text-center">
+@if (Model.ResultSet == true)
+            {
+            <output>@Model.Result</output>
+            }
+
+@*<div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
@@ -62,5 +68,5 @@ console.log("@fruit");</script>
 }
 
 
-<div>@(Math.Round(Math.Atan(1) * 4, 3))</div>
+<div>@(Math.Round(Math.Atan(1) * 4, 3))</div>*@
 

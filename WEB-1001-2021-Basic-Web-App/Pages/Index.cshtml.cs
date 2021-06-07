@@ -17,13 +17,27 @@ namespace WEB_1001_2021_Basic_Web_App.Pages
             _logger = logger;
         }
 
+
+
         public void OnGet()
         {
-            ViewData["Test"] = "This is a test";
-            //maxInt = int.MaxValue;
+            // ViewData["Test"] = "This is a test";
+            
+            if (leftNumber > 0 && rightNumber > 0)
+            {
+                Result = leftNumber + rightNumber;
+                ResultSet = true;
+            }
         }
 
-        [FromQuery(Name = "maxInt")]
-        public int maxInt { get; set; }
+        [FromQuery(Name = "leftNumber")]
+        public int leftNumber { get; set; }
+
+        [FromQuery(Name = "rightNumber")]
+        public int rightNumber { get; set; }
+
+        public int Result { get; set; }
+
+        public bool ResultSet { get; set; }
     }
 }
