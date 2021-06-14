@@ -17,56 +17,69 @@
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-page="/Error">Error</a>
     </li>
-    
 }
 
-<form method="get">
-    <input name="leftNumber" type="number" step="1" />
-    <input name="rightNumber" type="number" step="1" />
+<!--<form method="get">
+    <input name="leftNumber" type="number" step="1" value="@Model.leftNumber" />
+    <input name="rightNumber" type="number" step="1"  value="@Model.rightNumber" />-->
+    @*<input name="test" type="text" autocomplete="country" />*@
+    <!--<input type="submit" value="Submit" />
+</form>-->
+
+<form method="post">
+    <input type="text" name="FirstName" />
+    <input type="text" name="LastName" />
+    <input type="text" name="Email" />
     <input type="submit" value="Submit" />
 </form>
 
+<style>
+    .answer {
+        margin-top: 1rem;
+    }
+    </style>
+
 @if (Model.ResultSet == true)
             {
-            <output>@Model.Result</output>
+            <div class="answer">The answer is: <output>@Model.Result</output></div>
+    }
+
+    @*<div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        </div>
+
+        <div>This is a change.</div>
+        <p>@ViewData["Test"]</p>
+
+        <p>@Model.maxInt</p>
+
+        <datalist id="fruit-list">
+            @foreach (string fruit in fruits)
+            {
+                <option>@fruit</option>
             }
+        </datalist>
 
-@*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        <input type="text" list="fruit-list" />
 
-<div>This is a change.</div>
-<p>@ViewData["Test"]</p>
+        @for (int i = 0; i < 5; i++)
+        {
+            <div>@i</div>
+        }
+        <code>
+            @for (int i = 0; i < 5; i++)
+            {
+                <span>@i</span>
+            }
+        </code>
 
-<p>@Model.maxInt</p>
-
-<datalist id="fruit-list">
-    @foreach (string fruit in fruits)
-    {
-        <option>@fruit</option>
-    }
-</datalist>
-
-<input type="text" list="fruit-list" />
-
-@for (int i = 0; i < 5; i++)
-{
-    <div>@i</div>
-}
-<code>
-    @for (int i = 0; i < 5; i++)
-    {
-        <span>@i</span>
-    }
-</code>
-
-@foreach (string fruit in fruits)
-{
-    <script>
-console.log("@fruit");</script>
-}
+        @foreach (string fruit in fruits)
+        {
+            <script>
+        console.log("@fruit");</script>
+        }
 
 
-<div>@(Math.Round(Math.Atan(1) * 4, 3))</div>*@
+        <div>@(Math.Round(Math.Atan(1) * 4, 3))</div>*@
 

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WEB_1001_2021_Basic_Web_App.Data;
 
 namespace WEB_1001_2021_Basic_Web_App.Pages
 {
@@ -29,6 +30,25 @@ namespace WEB_1001_2021_Basic_Web_App.Pages
                 ResultSet = true;
             }
         }
+
+        public void OnPost()
+        {
+            // string salt = String.Concat(LoginName, ":", LoginPass);
+            if (ModelState.IsValid)
+            {
+
+            }
+
+        }
+
+        [FromForm]
+        public Customer Customer { get; set; }
+
+        [FromForm(Name = "loginName")]
+        public string LoginName { get; set; }
+
+        [FromForm(Name = "loginPass")]
+        public string LoginPass { get; set; }
 
         [FromQuery(Name = "leftNumber")]
         public int leftNumber { get; set; }
