@@ -1,22 +1,29 @@
 ﻿@page
 @model IndexModel
 @using System.Collections.Generic;
+@using WEB_1001_2021_Basic_Web_App.ViewModels; 
 @{
-    ViewData["Title"] = "Testing page";
-    List<string> fruits = new List<string>() { "Bananna", "Cherry", "Apple", "Pineapple" };
-    ViewData["Hero-Heading"] = "This is the Index Page";
-    ViewData["Hero-SubHeading"] = "We call this the home page.";
-    ViewData["Hero-ImageLink"] = "https://picsum.photos/1920/1080";
+        //ViewData["Title"] = "Testing page";
+        //List<string> fruits = new List<string>() { "Bananna", "Cherry", "Apple", "Pineapple" };
+        //ViewData["Hero-Heading"] = "This is the Index Page";
+        //ViewData["Hero-SubHeading"] = "We call this the home page.";
+        //ViewData["Hero-ImageLink"] = "Picture Here";
 
-    var vdHero = new ViewDataDictionary(this.ViewData) { { "", "" } };
-    vdHero.Clear();
+        //var vdHero = new ViewDataDictionary(this.ViewData) { { "", "" } };
+        //vdHero.Clear();
 
-    foreach (var x in ViewData.Where(vd => vd.Key.StartsWith("Hero-")))
-    {
-        vdHero.Add(x);
-    }
+        //foreach (var x in ViewData.Where(vd => vd.Key.StartsWith("Hero-")))
+        //{
+        //    vdHero.Add(x);
+        //}
 
-    }
+        //HeroHeading headingData = new HeroHeading() {
+        //    Heading = ViewData["Hero-Heading"].ToString(),
+        //    SubHeading = ViewData["Hero-SubHeading"].ToString(),
+        //    ImageLink = new Uri(ViewData["Hero-ImageLink"].ToString())
+    };
+
+}
 
     @section Scripts {
     @*<a href="https://www.google.ca/">Google</a>
@@ -30,7 +37,8 @@
         </li>*@
 }
 
-<partial name="_HeroHeading" view-data="vdHero" />
+@*<partial name="_HeroHeadingClass" model="headingData" />
+<partial name="_HeroHeading" view-data="vdHero" />*@
 
 <!--<form method="get">
     <input name="leftNumber" type="number" step="1" value="@Model.leftNumber" />
@@ -38,13 +46,13 @@
 @*<input name="test" type="text" autocomplete="country" />*@
 <!--<input type="submit" value="Submit" />
 </form>-->
-<!--<form asp-page="Index">-->
-@*<div>
+<form asp-page="Index">
+<div>
         <label asp-for="Customer.FirstName"></label>
         <input asp-for="Customer.FirstName" />
         <span asp-validation-for="Customer.FirstName"></span>
-    </div>*@
-@*<div>
+    </div>
+<div>
         <label asp-for="Customer.LastName"></label>
         <input asp-for="Customer.LastName" />
         <span asp-validation-for="Customer.LastName"></span>
@@ -53,12 +61,7 @@
         <label asp-for="Customer.Email"></label>
         <input asp-for="Customer.Email" />
         <span asp-validation-for="Customer.Email"></span>
-    </div>*@
-@*<partial name="_FormInput" for="Customer.FirstName" />
-    <partial name="_FormInput" for="Customer.LastName" />
-    <partial name="_FormInput" for="Customer.Email" />*@
-<!--<partial name="_FormInput" model="Model.Customer" />
-    <input type="submit" value="Submit" />
+    </div>
 </form>
 
 
@@ -71,7 +74,7 @@
 @if (Model.ResultSet == true)
             {
             <div class="answer">The answer is: <output>@Model.Result</output></div>
-    }-->
+    }
 @*<div class="text-center">
         <h1 class="display-4">Welcome</h1>
         <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>

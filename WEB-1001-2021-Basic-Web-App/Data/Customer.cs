@@ -18,8 +18,11 @@ namespace WEB_1001_2021_Basic_Web_App.Data
         [Display(Name = "Last Name", Description = "Last or Surname")]
         public string LastName { get; set; }
 
+        [Key]
         [EmailAddress(ErrorMessage = "Please put in a correct Email address.")]
         public string Email { get; set; }
+
+        public string Location { get; set; }
 
         public DateTime RegisterDate { get; set; }
     }

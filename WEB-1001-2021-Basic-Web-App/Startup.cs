@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WEB_1001_2021_Basic_Web_App.Data.Context;
 
 namespace WEB_1001_2021_Basic_Web_App
 {
@@ -24,6 +26,9 @@ namespace WEB_1001_2021_Basic_Web_App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<StoreContext>(
+                    options => options.UseSqlServer("Name=ConnectionStrings:DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
