@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WEB_1001_2021_Basic_Web_App.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,11 +11,11 @@ namespace WEB_1001_2021_Basic_Web_App.Migrations
                 name: "Customers",
                 columns: table => new
                 {
-                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RegisterDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Email = table.Column<string>(type: "TEXT", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", maxLength: 64, nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", maxLength: 128, nullable: true),
+                    Location = table.Column<string>(type: "TEXT", nullable: true),
+                    RegisterDate = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,13 +26,13 @@ namespace WEB_1001_2021_Basic_Web_App.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    SKU = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Decription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(18,10)", precision: 18, scale: 10, nullable: false),
-                    Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SubCategory = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Dimensions = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    SKU = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Decription = table.Column<string>(type: "TEXT", nullable: true),
+                    Price = table.Column<decimal>(type: "TEXT", precision: 18, scale: 10, nullable: false),
+                    Category = table.Column<string>(type: "TEXT", nullable: true),
+                    SubCategory = table.Column<string>(type: "TEXT", nullable: true),
+                    Dimensions = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -43,10 +43,10 @@ namespace WEB_1001_2021_Basic_Web_App.Migrations
                 name: "Colors",
                 columns: table => new
                 {
-                    RGB = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ShortCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductSKU = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    RGB = table.Column<string>(type: "TEXT", nullable: false),
+                    ShortCode = table.Column<string>(type: "TEXT", nullable: true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    ProductSKU = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -63,9 +63,9 @@ namespace WEB_1001_2021_Basic_Web_App.Migrations
                 name: "Materials",
                 columns: table => new
                 {
-                    ShortCode = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductSKU = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    ShortCode = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    ProductSKU = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -82,13 +82,13 @@ namespace WEB_1001_2021_Basic_Web_App.Migrations
                 name: "Media",
                 columns: table => new
                 {
-                    FilePath = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FileType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MediaDescriptor = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ColorRGB = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    MaterialShortCode = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ProductSKU = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    FilePath = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    FileType = table.Column<string>(type: "TEXT", nullable: true),
+                    MediaDescriptor = table.Column<string>(type: "TEXT", nullable: true),
+                    ColorRGB = table.Column<string>(type: "TEXT", nullable: true),
+                    MaterialShortCode = table.Column<string>(type: "TEXT", nullable: true),
+                    ProductSKU = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

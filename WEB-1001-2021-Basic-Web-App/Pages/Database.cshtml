@@ -1,0 +1,32 @@
+﻿@page
+@model WEB_1001_2021_Basic_Web_App.Pages.DatabaseModel
+@{
+}
+
+<ul>
+    @foreach (var col in Model.colorList)
+    {
+        <li>
+            <form method="post">
+                <div><label>ShortCode: <input type="text" name="updateColor.ShortCode" value="@col.ShortCode" /></label></div>
+                <div><label>Name: <input type="text" name="updateColor.Name" value="@col.Name" /></label></div>
+                <div><label>Color: <input type="color" name="updateColor.RGB" value="@col.RGB" /></label></div>
+                <input type="submit" value="Update" />
+            </form>
+            <form asp-page="ColorDelete" method="post">
+                <input type="hidden" value="@col.RGB" name="updateColor.RGB" />
+                <input type="hidden" value="@col.Name" name="updateColor.Name" />
+                <input type="hidden" value="@col.ShortCode" name="updateColor.ShortCode" />
+                <input type="Submit" value="Delete" />
+            </form>
+        </li>
+        
+    }
+</ul>
+
+<form method="Get">
+    <label>ShortCode: <input type="text" name="color.ShortCode" /></label>
+    <label>Name: <input type="text" name="color.Name" /></label>
+    <label>Color: <input type="color" name="color.RGB" /></label>
+    <input type="submit" />
+</form>

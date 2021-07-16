@@ -28,7 +28,7 @@ namespace WEB_1001_2021_Basic_Web_App
             services.AddRazorPages();
 
             services.AddDbContext<StoreContext>(
-                    options => options.UseSqlServer("Name=ConnectionStrings:DefaultConnection"));
+                    options => options.UseSqlite("Data Source=d:\\mydb.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

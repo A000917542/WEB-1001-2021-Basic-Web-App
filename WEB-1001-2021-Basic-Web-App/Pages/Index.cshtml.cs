@@ -38,10 +38,14 @@ namespace WEB_1001_2021_Basic_Web_App.Pages
             //    .Where(c => c.LastName == "Ritchie")
             //    .FirstOrDefault();
 
-            var cust = _dbContext.Customers
-                .Where(c => c.LastName == "Ritchie");
+            //var newColor = new Color() { ShortCode = "DeepRed", Name = "DeepRed", RGB = "#FF0000" };
+            //_dbContext.Add(newColor);
+            //_dbContext.SaveChanges();
 
-            Customer = cust.FirstOrDefault();
+            //var cust = _dbContext.Customers
+            //    .Where(c => c.LastName == "Ritchie");
+
+            //Customer = cust.FirstOrDefault();
         }
 
         public void OnPost()
@@ -53,6 +57,8 @@ namespace WEB_1001_2021_Basic_Web_App.Pages
             }
 
         }
+
+        public HeroHeading heroData = new HeroHeading() { Heading = "test",  SubHeading = "test sub", ImageLink="Random image"};
 
         [FromForm]
         public Customer Customer { get; set; }
@@ -72,5 +78,12 @@ namespace WEB_1001_2021_Basic_Web_App.Pages
         public int Result { get; set; }
 
         public bool ResultSet { get; set; }
+    }
+
+    public class HeroHeading
+    {
+        public string ImageLink;
+        public string Heading;
+        public string SubHeading;
     }
 }
