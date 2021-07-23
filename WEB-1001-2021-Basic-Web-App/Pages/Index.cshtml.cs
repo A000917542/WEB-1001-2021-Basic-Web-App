@@ -11,12 +11,12 @@ using WEB_1001_2021_Basic_Web_App.Data.Context;
 
 namespace WEB_1001_2021_Basic_Web_App.Pages
 {
-    public class IndexModel : PageModel
+    public class ProductIndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<ProductIndexModel> _logger;
         private readonly StoreContext _dbContext;
 
-        public IndexModel(ILogger<IndexModel> logger, StoreContext context)
+        public ProductIndexModel(ILogger<ProductIndexModel> logger, StoreContext context)
         {
             _logger = logger;
             _dbContext = context;

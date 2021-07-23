@@ -30,6 +30,10 @@ namespace WEB_1001_2021_Basic_Web_App.Pages
             if (updateColor.RGB != null)
             {
                 _context.Colors.Remove(updateColor);
+
+                //var delList = _context.Colors.Where(color => color.RGB.Contains("CC"));
+                //_context.Colors.RemoveRange(delList);
+
                 _context.SaveChanges();
             }
 

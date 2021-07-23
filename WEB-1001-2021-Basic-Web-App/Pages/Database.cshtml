@@ -25,8 +25,8 @@
 </ul>
 
 <form method="Get">
-    <label>ShortCode: <input type="text" name="color.ShortCode" /></label>
-    <label>Name: <input type="text" name="color.Name" /></label>
-    <label>Color: <input type="color" name="color.RGB" /></label>
+    <label>ShortCode: <input asp-for="color.ShortCode" /></label>
+    <label>Name: <input asp-for="color.Name" /></label>
+    <label>Color: <input type="color" asp-for="color.RGB" /></label>
     <input type="submit" />
 </form>

@@ -9,6 +9,7 @@ namespace WEB_1001_2021_Basic_Web_App.Data
     public class Product
     {
         [Key]
+        [Display(Name="Stock Keeping Unit")]
         public string SKU { get; set; }
 
         public string Name { get; set; }

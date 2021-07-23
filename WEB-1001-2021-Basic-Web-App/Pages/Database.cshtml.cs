@@ -28,7 +28,8 @@ namespace WEB_1001_2021_Basic_Web_App.Pages
 
         public void OnGet()
         {
-            if (color.ShortCode != null)
+
+            if (ModelState.IsValid && ModelState.Values.Count() > 0)
             {
                 _context.Colors.Add(color);
                 _context.SaveChanges();
